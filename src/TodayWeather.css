@@ -1,0 +1,23 @@
+.today-weather{
+    border-radius: 2%;
+    width: 350px;
+    height: 350px;
+    
+    background-color: #1B5396 !important;
+    color: white !important;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .today-weather{
+        border-radius: 2%;
+        width: 350px;
+        height:350px;
+        
+        background-color: #1B5396 !important;
+        color: white !important;
+        text-align: center;
+    }
+
+
+}

@@ -1,0 +1,69 @@
+
+.carousel-container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  .carousel-title2 {
+    font-size: 24px;
+  }
+  
+  .carousel-slider2 {
+    position: relative;
+    width: fit-content; /* Adjusted width to better fit card aspect ratio */
+    height: 350px; /* Adjusted height to better fit card aspect ratio */
+  }
+
+  .carousel-button2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: grey;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1000;
+  }
+  
+  .region-container2 {
+    width: 100%;
+  }
+  
+  .region-title2 {
+    font-weight: bold;
+    color: #1976d2; /* Primary color */
+  }
+  
+  .shop-card2 {
+    width: 350px;
+    height: 350px;
+    border-radius: 2%;
+    background-color: green !important;
+  }
+  
+  .shop-card .MuiCardHeader-root {
+    background-color: #f5f5f5;
+  }
+  
+  
+  
+  /* Responsive styles */
+  @media (max-width: 600px) {
+    
+  
+    
+    .shop-card2 {
+        width: 350px;
+        
+        height: 350px;
+        border-radius: 2%;
+      }
+   
+}
+
+  
+  

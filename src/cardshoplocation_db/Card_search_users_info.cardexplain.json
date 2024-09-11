@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "66ceebe8b25c561c2dd5f30d"
+  },
+  "sampleName": "./kuangshen.jpg"
+},
+{
+  "_id": {
+    "$oid": "66ceececb25c561c2dd5f31c"
+  },
+  "sampleName": "./magnet_field.jpg"
+},
+{
+  "_id": {
+    "$oid": "66ceed0cb25c561c2dd5f31d"
+  },
+  "sampleName": "./redreboot.jpg"
+}]

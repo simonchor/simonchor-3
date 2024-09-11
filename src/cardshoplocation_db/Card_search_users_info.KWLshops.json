@@ -1,0 +1,261 @@
+[{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042a4"
+  },
+  "shopName": "Arena Group Ltd",
+  "location": "長沙灣天悅廣場2樓213店",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.970601427567!2d114.150228018835!3d22.335019623913393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074cf30f0f27%3A0x42817fe760a896f9!2sSmiling%20Plaza!5e0!3m2!1szh-TW!2sjp!4v1721453595855!5m2!1szh-TW!2sjp",
+  "workingHours": "Mon - Fri : 1400 - 2200 \n Sat - Sun : 1400 - 2300"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042a5"
+  },
+  "shopName": "Card Collection(Shop-1)",
+  "location": "長沙灣天悅廣場125A",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.970601427567!2d114.150228018835!3d22.335019623913393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074cf30f0f27%3A0x42817fe760a896f9!2sSmiling%20Plaza!5e0!3m2!1szh-TW!2sjp!4v1721453595855!5m2!1szh-TW!2sjp",
+  "workingHours": "14:00至20:00"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042a6"
+  },
+  "shopName": "Card Collection(Shop-2)",
+  "location": "大南西街 百福工業 2樓A06",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.3777831282064!2d114.14839529999996!3d22.339359900000012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404075417a03ca3%3A0xe846464fcd603640!2z55m-56aP5bel5qWt5aSn5buI!5e0!3m2!1szh-TW!2sjp!4v1721453837469!5m2!1szh-TW!2sjp",
+  "workingHours": "15:00至22:00(星期四-六)"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042a7"
+  },
+  "shopName": "Card Legacy(Shop-1)",
+  "location": "九龍觀塘開源道47號凱源工業大廈1/f C室",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14764.594324587004!2d114.2132146188268!3d22.31021982772499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34040145a2c12d21%3A0x3b4417041e8d158a!2z6aaZ5riv6KeA5aGY6ZaL5rqQ6YGTNDfomZ_lh7HmupDlt6Xmpa3lpKflu4g!5e0!3m2!1szh-TW!2sjp!4v1721453916640!5m2!1szh-TW!2sjp",
+  "workingHours": "14:00至22:00"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042a8"
+  },
+  "shopName": "Card Legacy(Shop-2)",
+  "location": "長沙灣天悅廣埸167號",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.970601427567!2d114.150228018835!3d22.335019623913393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074cf30f0f27%3A0x42817fe760a896f9!2sSmiling%20Plaza!5e0!3m2!1szh-TW!2sjp!4v1721453595855!5m2!1szh-TW!2sjp",
+  "workingHours": "14:00至22:00(星期三-日)"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042a9"
+  },
+  "shopName": "CARD Revolution",
+  "location": "長沙灣天悅廣場",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.970601427567!2d114.150228018835!3d22.335019623913393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074cf30f0f27%3A0x42817fe760a896f9!2sSmiling%20Plaza!5e0!3m2!1szh-TW!2sjp!4v1721453595855!5m2!1szh-TW!2sjp",
+  "workingHours": "Unknown"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042aa"
+  },
+  "shopName": "CARD Wing",
+  "location": "九龍九龍灣宏光道8號創豪坊3樓25室",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14763.321466353007!2d114.19635691883077!3d22.322254325875797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34040133ac4455b5%3A0xfee46804f32098c2!2z6aaZ5riv5Lmd6b6N54Gj5a6P5YWJ6YGTOOiZn-WJteixquWdig!5e0!3m2!1szh-TW!2sjp!4v1721453997341!5m2!1szh-TW!2sjp",
+  "workingHours": "15:00 - 23:00(星期二-五) \n 14:00 - 00:00(星期二-五)"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042ab"
+  },
+  "shopName": "CLS-TCG",
+  "location": "香港九龍荔枝角國際工業大廈B1209室",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.73578967023!2d114.13537561883575!3d22.3372378235723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340407550d900279%3A0x9bdbaff859875c42!2z6aaZ5riv6ZW35rKZ54Gj6Z2S5bGx6YGTNTAxLTUwM-iZn-Wci-mam-W3pealreWkp-W7iA!5e0!3m2!1szh-TW!2sjp!4v1721454060607!5m2!1szh-TW!2sjp",
+  "workingHours": "Everyday 1600-2400"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042ac"
+  },
+  "shopName": "COMBO TCG(Shop-1)",
+  "location": "九龍青山道124-126號Spark City8樓全層",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.927275866412!2d114.15030821883516!3d22.33542892385046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074c8a383c37%3A0xc056ead7d61230c2!2z5L-K6JaI6ZW35rKZ54GjIHwgU3BhcmsgQ2l0eSBDaGV1bmcgU2hhIFdhbg!5e0!3m2!1szh-TW!2sjp!4v1721454212622!5m2!1szh-TW!2sjp",
+  "workingHours": "Monday - Sunday 13:00-21:00"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042ad"
+  },
+  "shopName": "COMBO TCG(Shop-2)",
+  "location": "九龍元州街162-188號天悅廣場1樓129號店",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.970601427567!2d114.150228018835!3d22.335019623913393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074cf30f0f27%3A0x42817fe760a896f9!2sSmiling%20Plaza!5e0!3m2!1szh-TW!2sjp!4v1721453595855!5m2!1szh-TW!2sjp",
+  "workingHours": "Monday - Sunday 13:00-21:00"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042ae"
+  },
+  "shopName": "Duel Time",
+  "location": "九龍長沙灣天悅廣場219號店",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.970601427567!2d114.150228018835!3d22.335019623913393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074cf30f0f27%3A0x42817fe760a896f9!2sSmiling%20Plaza!5e0!3m2!1szh-TW!2sjp!4v1721453595855!5m2!1szh-TW!2sjp",
+  "workingHours": "被其他店用來開辦比賽"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042af"
+  },
+  "shopName": "Dummy",
+  "location": "Kowloon, Hong Kong Tsim Sha Tsui Centre, 66 Mody Road (cannot find information about it on social media)",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2194.968145459245!2d114.17743185252186!3d22.29761543348777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400efc13fffff%3A0x5f67cd1fc2b196cf!2z5bCW5rKZ5ZKA5Lit5b-D!5e0!3m2!1szh-TW!2sjp!4v1721454289660!5m2!1szh-TW!2sjp",
+  "workingHours": "Unknown"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042b0"
+  },
+  "shopName": "Magic star",
+  "location": "香港葵芳金龍工業中心第四座24樓K室(MS TCG)",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d652.2861929405827!2d114.13129618139793!3d22.35786038873847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403f978fa2c3611%3A0xccc2935c843c8df2!2z6YeR6b6N5bel5qWt5Lit5b-D56ys5Zub5bqn!5e0!3m2!1szh-TW!2sjp!4v1721454380358!5m2!1szh-TW!2sjp",
+  "workingHours": "星期一至五 14:00-21:00 \n 星期六至日及假期 12:00-22:00"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042b1"
+  },
+  "shopName": "MY 咭",
+  "location": "長沙灣 天悅廣場1樓 113, 133-138店",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.970601427567!2d114.150228018835!3d22.335019623913393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074cf30f0f27%3A0x42817fe760a896f9!2sSmiling%20Plaza!5e0!3m2!1szh-TW!2sjp!4v1721453595855!5m2!1szh-TW!2sjp",
+  "workingHours": "14:00 - 20:30"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042b2"
+  },
+  "shopName": "One Chance",
+  "location": "觀塘成業街30號華富工貿中心8樓807室",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14764.66707290125!2d114.21646541882654!3d22.30953182783068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340401453685da6b%3A0x766925ca61a1ec34!2z6aaZ5riv6KeA5aGY5oiQ5qWt6KGXMzDomZ_oj6_lr4zlt6Xosr_kuK3lv4M!5e0!3m2!1szh-TW!2sjp!4v1721454427134!5m2!1szh-TW!2sjp",
+  "workingHours": "星期一至日 15:00 - 21:00"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042b3"
+  },
+  "shopName": "Outplay卡牌桌遊",
+  "location": "長沙灣天悅廣場131號店",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.970601427567!2d114.150228018835!3d22.335019623913393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074cf30f0f27%3A0x42817fe760a896f9!2sSmiling%20Plaza!5e0!3m2!1szh-TW!2sjp!4v1721453595855!5m2!1szh-TW!2sjp",
+  "workingHours": "星期一至五 14:30-21:00 \n 星期六日 13:00-21:00"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042b4"
+  },
+  "shopName": "Players' Club",
+  "location": "太子彌敦道749A愛都婚紗中心 8樓",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14763.176692949468!2d114.15795206883122!3d22.32362272566548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400c9d1ae6765%3A0x2b3f5dadcd7ef3d5!2z5oSb6YO95ama57SX5Lit5b-D!5e0!3m2!1szh-TW!2sjp!4v1721454494748!5m2!1szh-TW!2sjp",
+  "workingHours": "每日14:30-20:30"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042b5"
+  },
+  "shopName": "Top Deck Trading Card Game",
+  "location": "九龍長沙灣天悅廣場225號店",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.970601427567!2d114.150228018835!3d22.335019623913393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074cf30f0f27%3A0x42817fe760a896f9!2sSmiling%20Plaza!5e0!3m2!1szh-TW!2sjp!4v1721453595855!5m2!1szh-TW!2sjp",
+  "workingHours": "星期三至五、日15:00開門,星期六14:00開門"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042b6"
+  },
+  "shopName": "保安三街",
+  "location": "長沙灣青山道704號合興工業大廈2樓D1室",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10438.288895569758!2d114.14209653687583!3d22.335027912324176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404073941e98699%3A0x15cfeb735849b532!2z6I2U5p6d6KeS5ZCI6IiI5bel5qWt5aSn5buI!5e0!3m2!1szh-TW!2sjp!4v1721454577073!5m2!1szh-TW!2sjp",
+  "workingHours": "星期一19:00 - 22:00,星期四五18:30 - 23:00,星期六日15:00 - 23:00"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042b7"
+  },
+  "shopName": "卡之里",
+  "location": "長沙灣天悅廣場163a, 163及187號舖",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.970601427567!2d114.150228018835!3d22.335019623913393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074cf30f0f27%3A0x42817fe760a896f9!2sSmiling%20Plaza!5e0!3m2!1szh-TW!2sjp!4v1721453595855!5m2!1szh-TW!2sjp",
+  "workingHours": "14:00 - 21:00"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042b8"
+  },
+  "shopName": "大峽谷",
+  "location": "深水埗元州街162-188號天悅廣場一樓162號舖",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.970601427567!2d114.150228018835!3d22.335019623913393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074cf30f0f27%3A0x42817fe760a896f9!2sSmiling%20Plaza!5e0!3m2!1szh-TW!2sjp!4v1721453595855!5m2!1szh-TW!2sjp",
+  "workingHours": "15:00 - 21:00"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042b9"
+  },
+  "shopName": "尋寶淘",
+  "location": "九龍長沙灣天悅廣場110號店",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.970601427567!2d114.150228018835!3d22.335019623913393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074cf30f0f27%3A0x42817fe760a896f9!2sSmiling%20Plaza!5e0!3m2!1szh-TW!2sjp!4v1721453595855!5m2!1szh-TW!2sjp",
+  "workingHours": "Unknown"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042ba"
+  },
+  "shopName": "幻影卡社",
+  "location": "九龍長沙灣天悅廣場140號店",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.970601427567!2d114.150228018835!3d22.335019623913393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074cf30f0f27%3A0x42817fe760a896f9!2sSmiling%20Plaza!5e0!3m2!1szh-TW!2sjp!4v1721453595855!5m2!1szh-TW!2sjp",
+  "workingHours": "Unknown"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042bb"
+  },
+  "shopName": "新星卡社",
+  "location": "長沙灣元州街165號步陞工商業大樓 1樓A室",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14762.043542907262!2d114.15010771883475!3d22.334330524019354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074c951f3b3b%3A0x6162354c986aa5e5!2z5q2l6Zme5bel5ZWG5qWt5aSn5buI!5e0!3m2!1szh-TW!2sjp!4v1721454640193!5m2!1szh-TW!2sjp",
+  "workingHours": "14:30 - 02:00"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042bc"
+  },
+  "shopName": "星遺物 天悅219",
+  "location": "九龍長沙灣天悅廣場219號店",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.970601427567!2d114.150228018835!3d22.335019623913393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074cf30f0f27%3A0x42817fe760a896f9!2sSmiling%20Plaza!5e0!3m2!1szh-TW!2sjp!4v1721453595855!5m2!1szh-TW!2sjp",
+  "workingHours": "星期二至日 15:00 - 20:00"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042bd"
+  },
+  "shopName": "樂虎交易站",
+  "location": "長沙灣天悅廣場地下A22號",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.970601427567!2d114.150228018835!3d22.335019623913393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074cf30f0f27%3A0x42817fe760a896f9!2sSmiling%20Plaza!5e0!3m2!1szh-TW!2sjp!4v1721453595855!5m2!1szh-TW!2sjp",
+  "workingHours": "Unknown"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042be"
+  },
+  "shopName": "筑摩亭",
+  "location": "長沙灣天悅廣場168號鋪",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.970601427567!2d114.150228018835!3d22.335019623913393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074cf30f0f27%3A0x42817fe760a896f9!2sSmiling%20Plaza!5e0!3m2!1szh-TW!2sjp!4v1721453595855!5m2!1szh-TW!2sjp",
+  "workingHours": "星期一至五 15:30 - 20:30 \n 星期六日 14:00 - 23:00"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042bf"
+  },
+  "shopName": "萌新閒娛遊玩店",
+  "location": "九龍長沙灣天悅廣場145號店 天悅廣場",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.970601427567!2d114.150228018835!3d22.335019623913393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074cf30f0f27%3A0x42817fe760a896f9!2sSmiling%20Plaza!5e0!3m2!1szh-TW!2sjp!4v1721453595855!5m2!1szh-TW!2sjp",
+  "workingHours": "Unknown"
+},
+{
+  "_id": {
+    "$oid": "66b5e7dd90349a9e183042c0"
+  },
+  "shopName": "賣卡址",
+  "location": "九龍長沙灣天悅廣場142號舖",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14761.970601427567!2d114.150228018835!3d22.335019623913393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404074cf30f0f27%3A0x42817fe760a896f9!2sSmiling%20Plaza!5e0!3m2!1szh-TW!2sjp!4v1721453595855!5m2!1szh-TW!2sjp",
+  "workingHours": "General Holidays 13:00~21:00 \n Monday to Friday 14:00~22:00\nSaturday 12:00~21:00"
+}]

@@ -1,0 +1,17 @@
+.sample-image{
+    padding: 10px;
+    border-radius: 2%;
+    width: 500px;
+    margin: 10px;
+}
+
+@media (max-width: 600px) {
+    .sample-image{
+        padding: 10px;
+        border-radius: 2%;
+        width: 300px;
+        margin: 10px;
+    }
+
+
+}

@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "66b5e7fc90349a9e183042e0"
+  },
+  "shopName": "Play Card Chill",
+  "location": "新界大埔鄉事會街15號 大日子商場 3樓317 318號鋪",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14750.090852758829!2d114.15600141887231!3d22.446983306661874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34040976a269d3a1%3A0x49aa0ac9c6bce615!2z5aSn5pel5a2Q5ZWG5aC0!5e0!3m2!1szh-TW!2sjp!4v1721454698125!5m2!1szh-TW!2sjp",
+  "workingHours": "15:00-20:00"
+},
+{
+  "_id": {
+    "$oid": "66b5e7fc90349a9e183042e1"
+  },
+  "shopName": "This CARD",
+  "location": "大埔 懷仁街15號 泰和樓 閣樓",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3687.4811749761943!2d114.16627609999999!3d22.4485455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404083f49d05ef3%3A0xeabd001e153e340e!2z6aaZ5riv5aSn5Z-U5oe35LuB6KGXNDHomZ_ms7DlkozmqJM!5e0!3m2!1szh-TW!2sjp!4v1721454762186!5m2!1szh-TW!2sjp",
+  "workingHours": "星期一至五 14:00 - 20:30 \n 星期六日 13:00 - 21:00"
+},
+{
+  "_id": {
+    "$oid": "66b5e7fc90349a9e183042e2"
+  },
+  "shopName": "幻影卡社2號店",
+  "location": "新界屯門偉昌工業大廈7樓K室",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.7653933652423!2d113.96500443972984!3d22.40020008730019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403fb25b5653053%3A0x9ace3083f9c901ec!2z6aaZ5riv5bGv6ZaA55-z5o6S6aCt6LevNeiZn-WBieaYjOW3pealreS4reW_gw!5e0!3m2!1szh-TW!2sjp!4v1721455019788!5m2!1szh-TW!2sjp",
+  "workingHours": "15:00-20:00"
+},
+{
+  "_id": {
+    "$oid": "66b5e7fc90349a9e183042e3"
+  },
+  "shopName": "星光之都",
+  "location": "新界屯門震寰路9號好收成工業大廈7樓14室",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14755.19821790617!2d113.96274381885625!3d22.39891271407733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403fb2398abbf43%3A0x4efbe05074544e2!2z6aaZ5riv5bGv6ZaA6ZyH5a-w6LevOeiZn-WlveaUtuaIkOW3pealreWkp-W7iA!5e0!3m2!1szh-TW!2sjp!4v1721455092537!5m2!1szh-TW!2sjp",
+  "workingHours": "星期一至五 15:00 - 21:00 \n 星期六日 13:00 - 21:00"
+},
+{
+  "_id": {
+    "$oid": "66b5e7fc90349a9e183042e4"
+  },
+  "shopName": "樂豐卡社",
+  "location": "新界葵涌和宜合道26~30號和宜商場10號鋪",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14758.707042935686!2d114.12687601884527!3d22.36583081917303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403f89b92d58133%3A0x291bb39208ef259!2z5ZKM5a6c5ZWG5aC0!5e0!3m2!1szh-TW!2sjp!4v1721455148318!5m2!1szh-TW!2sjp",
+  "workingHours": "星期一至五 13:00 - 20:00 \n 星期六日 13:00 - 20:30"
+},
+{
+  "_id": {
+    "$oid": "66b5e7fc90349a9e183042e5"
+  },
+  "shopName": "浩揮卡牌遊戲店",
+  "location": "天水圍新北江商場地下A46A",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14749.528181653879!2d113.9901246188741!3d22.45227320584505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403f07e101483f1%3A0xc3e1f464d83933ab!2z5ZiJ5rmW5paw5YyX5rGf5ZWG5aC0!5e0!3m2!1szh-TW!2sjp!4v1721455267341!5m2!1szh-TW!2sjp",
+  "workingHours": "12:00 - 20:00"
+},
+{
+  "_id": {
+    "$oid": "66b5e7fc90349a9e183042e6"
+  },
+  "shopName": "英揚模型",
+  "location": "屯門青河坊2號利寶大廈商場一樓 63號",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d775.5344540692751!2d113.97878388903615!3d22.388176880099284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403fb15c34e8325%3A0x2c65f8d7b01fbb77!2z5Yip5a-25ZWG5aC0!5e0!3m2!1szh-TW!2sjp!4v1721455345628!5m2!1szh-TW!2sjp",
+  "workingHours": "12:00 - 20:00"
+},
+{
+  "_id": {
+    "$oid": "66b5e7fc90349a9e183042e7"
+  },
+  "shopName": "金豐遊玩王(盈豐 Branch)",
+  "location": "新界屯門良德街9號盈豐商場1樓B94B",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14754.172353607588!2d113.95741311885948!3d22.408576012587705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403fb0320a07305%3A0xa6ba93d0cb844eb9!2z55uI6LGQ5ZWG5aC0!5e0!3m2!1szh-TW!2sjp!4v1721455398959!5m2!1szh-TW!2sjp",
+  "workingHours": "12:00-18:00"
+}]

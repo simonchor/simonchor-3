@@ -1,0 +1,271 @@
+/* Home_style.css */
+.context-style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    margin-left: 0%; /* Ensure content is centered */
+    margin-right: 0%; /* Ensure content is centered */
+}
+
+.context-style1-5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin-left: 0%; /* Ensure content is centered */
+    margin-right: 0%; /* Ensure content is centered */
+}
+.context-style1-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 10px;
+    margin-left: 0%; /* Ensure content is centered */
+    margin-right: 0%; /* Ensure content is centered */
+}
+
+.context-style2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    margin-left: 2%; /* Ensure content is centered */
+    margin-right:2%; /* Ensure content is centered */
+}
+
+.context-style3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    margin-left: 0%; /* Ensure content is centered */
+    margin-right:0%; /* Ensure content is centered */
+    
+}
+
+.context-style3-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    margin-left: 2%; /* Ensure content is centered */
+    margin-right:2%; /* Ensure content is centered */
+    margin: 2%;
+}
+
+.context-style3-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    margin-left: 0%; /* Ensure content is centered */
+    margin-right:2%; /* Ensure content is centered */
+}
+
+.context-style4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    margin-left: 17%; /* Ensure content is centered */
+    margin-right: 0%; /* Ensure content is centered */
+}
+
+.context-style5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    margin-left: 0%; /* Ensure content is centered */
+    margin-right: 0%; /* Ensure content is centered */
+    height: 452px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.context-style6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    margin-left: 15%; /* Ensure content is centered */
+    margin-right: 0%; /* Ensure content is centered */
+}
+
+.context-style7 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    margin-left: 0%; /* Ensure content is centered */
+    margin-right:20%; /* Ensure content is centered */
+    
+}
+
+.search-input {
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.fetch-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.filter-container {
+    margin-bottom: 15px;
+}
+
+.filter-select {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.card-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-container2 {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.card-image {
+    width: 200px;
+    height: auto;
+}
+
+.fetch-card-paper{
+    border-radius: 6;
+    width: 450px;
+    padding: 20px;
+    margin: 20px;
+    height: fit-content;
+}
+
+.strong-card{
+    min-width: 275;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 6;
+    width: 500px;
+}
+
+.strong-theme{
+    min-width: 275;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 6;
+    width: 700px;
+}
+
+.theme-card-image {
+    width: 600px;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    .context-style4 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        margin-left: 0%; /* Ensure content is centered */
+        margin-right: 0%; /* Ensure content is centered */
+    }
+    .context-style {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        margin-left: 0%; /* Ensure content is centered */
+        margin-right: 0%; /* Ensure content is centered */
+    }
+    .context-style3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        margin-left: 0%; /* Ensure content is centered */
+        margin-right:0%; /* Ensure content is centered */
+        
+    }
+    .context-style2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        margin-left: 0%; /* Ensure content is centered */
+        margin-right:0%; /* Ensure content is centered */
+        margin-bottom: 2%;
+    }
+    .context-style3-1 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        margin-left: 0%; /* Ensure content is centered */
+        margin-right:0%; /* Ensure content is centered */
+    }
+    .context-style3-2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        margin-left: 0%; /* Ensure content is centered */
+        margin-right:0%; /* Ensure content is centered */
+        margin: 2%;
+    }
+    .context-style5 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        margin-left: 0%; /* Ensure content is centered */
+        margin-right: 0%; /* Ensure content is centered */
+        width: 350px;
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+    .context-style7 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        margin-left: 0%; /* Ensure content is centered */
+        margin-right:10%; /* Ensure content is centered */
+        
+    }
+    .fetch-card-paper{
+        border-radius: 6;
+        width: 250px;
+        padding: 20px;
+        margin: 20px;
+        height: fit-content;
+    }
+    .strong-card{
+        
+        margin: 20px;
+        padding: 20px;
+        border-radius: 6;
+        width: 200px;
+    }
+
+    .strong-theme{
+        min-width: 275;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 6;
+        width: 230px;
+    }
+
+    .theme-card-image {
+        width: 230px;
+        height: auto;
+    }
+}

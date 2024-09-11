@@ -1,0 +1,44 @@
+{
+    "Snake-Eyes Flamberge Dragon":
+    {
+        "deckname":"薊花刻魔罪寶蛇眼",
+        "comment":"有薊花系列，紅淚之魔 拉克莉未莎和軟綿雀精的加入使得罪寶蛇眼能夠真正的做到有阻抗的偽一卡展開，是現在環境當之無愧的最強卡組。",
+        "deckimage":"./snake_eye.png"
+    },
+    "Sangenpai Transcendent Dragion":
+    {
+        "deckname":"天杯龍",
+        "comment":"軟綿雀精的誕生使得這個後攻卡組可以塞入比閃刀姬還要多的手坑，40卡組裡面可以塞入整整20張手坑，不用魔術手也能做到冠軍操作。",
+        "deckimage":"./tian_bei.png"
+    },
+    "Spirit of Yubel":
+    {
+        "deckname":"尤貝爾",
+        "comment":"只能吃到拉克莉未莎這一個小軸強化，且同為先攻阻抗，尤貝爾幻影顯然沒有背信聖徒 森惡狼母那樣更有牌效的出場條件和更強大的三色康使尤貝爾在天杯龍和罪寶蛇眼面前顯得黯然失色。",
+        "deckimage":"./yubel.png"
+    },
+    "Mementomictlan Tecuhtlica - Creation King":
+    {
+        "deckname":"莫忘",
+        "comment":"隨著莫忘的兩張新卡，冥府亡靈和卡庫塔斯的加入，莫忘的妥協，展開以及阻抗能力更勝一層樓了，感覺甚至可以和尤貝爾打的有來有回。",
+        "deckimage":"./memento.png"
+    },
+    "Centur-Ion Primera":
+    {
+        "deckname":"百夫長",
+        "comment":"本來就是一套不弱的同步卡組，不過在內地和日本均沒有上位構築。",
+        "deckimage":"./LOL_Gwen_default_pro_pic.png"
+    },
+    "Ritual Beast Ulti-Nochiudrago":
+    {
+        "deckname":"靈獸",
+        "comment":"也是有了新卡，加上本身不弱的系統和某些報社卡的契合度（大宇宙人、各類貼紙）使其也有嶄露頭角的機會了。",
+        "deckimage":"./ling_shou.png"
+    },
+    "Rescue-ACE Turbulence":
+    {
+        "deckname":"消防隊/R-ACE",
+        "comment":"一直都是一副又強又惡心的一套卡組。",
+        "deckimage":"./r-ace.png"
+    }
+}

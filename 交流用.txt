@@ -1,0 +1,755 @@
+前端：
+import React, { useState, useEffect } from 'react';
+import { Box, IconButton, Drawer, Paper, Typography, Card, CardContent, Button, TextField} from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
+import { useTheme, useMediaQuery } from '@mui/material';
+import './BuildDeck_style.css';
+import SaveIcon from '@mui/icons-material/Save';
+import ChangeCircleIcon from '@mui/icons-material/ChangeCircle';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import DeleteIcon from '@mui/icons-material/Delete';
+import './Home_style.css'
+import axios from 'axios'; // Import axios here
+
+const cardTypes = [
+  "All", "Monster", "Spell", "Trap", 
+  "Effect Monster", "Normal Monster", 
+  "Fusion Monster", "Ritual Monster", 
+  "Synchro Monster", "XYZ Monster", 
+  "Link Monster", "Skill Card"
+];
+
+const races = [
+  "All", "Warrior", "Spellcaster", "Fairy", 
+  "Beast", "Beast-Warrior", "Dinosaur", 
+  "Dragon", "Machine", "Aqua", "Fiend", 
+  "Zombie", "Plant", "Insect", "Winged Beast","Rock"
+];
+
+const attributes = [
+  "All", "FIRE", "WATER", "WIND", 
+  "EARTH", "LIGHT", "DARK"
+];
+
+const fetchCardData = async (cardName = "") => {
+  try {
+    const url = cardName
+      ? https://db.ygoprodeck.com/api/v7/cardinfo.php?fname=${cardName}
+      : "https://db.ygoprodeck.com/api/v7/cardinfo.php";
+    const response = await fetch(url);
+    const data = await response.json();
+    if (data.data && data.data.length > 0) {
+      return data.data; // Return all possible matches
+    } else {
+      throw new Error("Card not found");
+    }
+  } catch (error) {
+    console.error("Error fetching data: ", error);
+    throw error;
+  }
+};
+
+const BuildCard = ({ addToDeck }) => {
+  const [cardName, setCardName] = useState("");
+  const [cards, setCards] = useState([]);
+  const [filteredCards, setFilteredCards] = useState([]);
+  const [error, setError] = useState(null);
+  const [selectedType, setSelectedType] = useState("All");
+  const [selectedRace, setSelectedRace] = useState("All");
+  const [selectedAttribute, setSelectedAttribute] = useState("All");
+  const [isSearchClicked, setIsSearchClicked] = useState(false);
+  const [showResults, setShowResults] = useState(true);
+
+  const handleFetchData = async () => {
+    try {
+      setError(null); // Reset any previous errors
+      setIsSearchClicked(true); // Indicate that the search button has been clicked
+      const cardsData = await fetchCardData(cardName);
+      setCards(cardsData); // Set the fetched card data
+      setShowResults(true); // Ensure results are shown after a search
+    } catch (error) {
+      setError("Card not found. Please try another card name.");
+      setCards([]); // Reset the card data
+      setFilteredCards([]);
+    }
+  };
+
+  useEffect(() => {
+    // Filter cards based on selected type, race, and attribute
+    let results = cards;
+
+    if (selectedType !== "All") {
+      results = results.filter(card => card.type.includes(selectedType));
+    }
+    
+    if (selectedRace !== "All") {
+      results = results.filter(card => card.race === selectedRace);
+    }
+    
+    if (selectedAttribute !== "All") {
+      results = results.filter(card => card.attribute === selectedAttribute);
+    }
+    
+    setFilteredCards(results);
+  }, [cards, selectedType, selectedRace, selectedAttribute]);
+
+  const shouldShowResults = isSearchClicked && (filteredCards.length > 0 || error);
+
+  const toggleResults = () => {
+    setShowResults(!showResults);
+  };
+
+  
+
+  return (
+    <div className="context-style">
+      <h1>Please enter the card name: </h1>
+      <input
+        type="text"
+        value={cardName}
+        onChange={(e) => setCardName(e.target.value)}
+        placeholder="Enter card name"
+        className="search-input"
+      />
+      <button onClick={handleFetchData} className="fetch-button">Search Card</button>
+
+      <div className="filter-container">
+        <label htmlFor="typeFilter">Filter by Type: </label>
+        <select
+          id="typeFilter"
+          value={selectedType}
+          onChange={(e) => setSelectedType(e.target.value)}
+          className="filter-select"
+        >
+          {cardTypes.map((type) => (
+            <option key={type} value={type}>{type}</option>
+          ))}
+        </select>
+      </div>
+      
+      <div className="filter-container">
+        <label htmlFor="raceFilter">Filter by Race: </label>
+        <select
+          id="raceFilter"
+          value={selectedRace}
+          onChange={(e) => setSelectedRace(e.target.value)}
+          className="filter-select"
+        >
+          {races.map((race) => (
+            <option key={race} value={race}>{race}</option>
+          ))}
+        </select>
+      </div>
+      
+      <div className="filter-container">
+        <label htmlFor="attributeFilter">Filter by Attribute: </label>
+        <select
+          id="attributeFilter"
+          value={selectedAttribute}
+          onChange={(e) => setSelectedAttribute(e.target.value)}
+          className="filter-select"
+        >
+          {attributes.map((attribute) => (
+            <option key={attribute} value={attribute}>{attribute}</option>
+          ))}
+        </select>
+      </div>
+
+      {shouldShowResults && (
+        <button onClick={toggleResults} className="toggle-button">
+          {showResults ? "Hide result(s)" : "Show result(s)"}
+        </button>
+      )}
+      <br />
+      {shouldShowResults && showResults && (
+        <div>
+          {filteredCards.map((card) => (
+            <Paper 
+              elevation={3} 
+              sx={{ 
+                borderRadius: 6, 
+                width: 'calc(100% - 50px)', // Ensures the width fits within the sidebar
+                padding: '20px', 
+                margin: '20px', 
+                boxSizing: 'border-box',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
+              }} 
+              key={card.id}
+            >
+              <div className="card-container" style={{ width: '100%' }}>
+                <h3>{card.name}</h3>
+                <img 
+                  src={card.card_images[0].image_url} 
+                  alt={card.name} 
+                  className="card-image" 
+                  style={{ 
+                    width: '100%', // Ensures the image fits the container width
+                    height: 'auto', // Maintains aspect ratio
+                    objectFit: 'contain' // Ensures the image is fully visible
+                  }}
+                />
+                <p><strong>Type:</strong> {card.type}</p>
+                <p><strong>Description:</strong> {card.desc}</p>
+                {card.type.includes("Trap") || card.type.includes("Spell") || card.type.includes("Skill Card") ? (
+                  <p><strong>Property:</strong> {card.race}</p>
+                ) : (
+                  <>
+                    <p><strong>Attack:</strong> {card.atk}</p>
+                    <p><strong>Defense:</strong> {card.def}</p>
+                    {card.type.includes("Link") ? (
+                      <p><strong>Link value:</strong> {card.linkval}</p>
+                    ) : card.type.includes("XYZ") ? (
+                      <p><strong>Rank:</strong> {card.level}</p>
+                    ) : (
+                      <p><strong>Level:</strong> {card.level}</p>
+                    )}
+                    <p><strong>Race:</strong> {card.race}</p>
+                    <p><strong>Attribute:</strong> {card.attribute}</p>
+                  </>
+                )}
+                <div>
+                  <Button 
+                    variant="contained" 
+                    color="primary" 
+                    onClick={() => addToDeck(card, 'main')}
+                    sx={{ margin: '5px', backgroundColor: 'blue' }}
+                  >
+                    Add to Main Deck
+                  </Button>
+                  <Button 
+                    variant="contained" 
+                    color="secondary" 
+                    onClick={() => addToDeck(card, 'side')}
+                    sx={{ margin: '5px', backgroundColor: 'red' }}
+                  >
+                    Add to Side Deck
+                  </Button>
+                </div>
+                <br /><br />
+              </div>
+            </Paper>
+          ))}
+        </div>
+      )}
+
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+    </div>
+  );
+};
+
+function BuildDeck(loggedInUser, setLoggedInUser  ) {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+    const [open, setOpen] = useState(!isMobile);
+    const [mainDeck, setMainDeck] = useState([]);
+    const [extraDeck, setExtraDeck] = useState([]);
+    const [sideDeck, setSideDeck] = useState([]);
+    const [deckName, setDeckName] = useState('Deck_test');
+
+    useEffect(() => {
+        setOpen(!isMobile);
+    }, [isMobile]);
+
+
+    
+    const maxCardCount = 3; // Maximum count per card type
+    const maxMainDeck = 60; // Maximum cards in Main Deck
+    const maxExtraDeck = 15; // Maximum cards in Extra Deck
+    const maxExtraSideDeck = 15; // Maximum cards in Extra Deck or Side Deck
+
+    const addToDeck = (card, deck) => {
+        if (deck === 'main') {
+            // Check if card already exists in the main deck
+            const cardInMainDeck = mainDeck.filter(item => item.id === card.id);
+            
+            // Ensure not exceeding max count per card type and max cards in the Main Deck
+            if (cardInMainDeck.length >= maxCardCount || mainDeck.length >= maxMainDeck) {
+                return;
+            }
+            if (card.type.includes("Fusion Monster") || card.type.includes("Synchro Monster") || card.type.includes("XYZ Monster") || card.type.includes("Link Monster")) {
+                // If adding to Extra Deck, ensure the card count does not exceed limits
+                if (extraDeck.filter(item => item.id === card.id).length >= maxCardCount || extraDeck.length >= maxExtraDeck) {
+                    return;
+                }
+                setExtraDeck(prev => [...prev, card]);
+            } else {
+                // Add card to Main Deck
+                setMainDeck(prev => [...prev, card]);
+            }
+        } else if (deck === 'side') {
+            // Check if card already exists in the side deck
+            if (sideDeck.filter(item => item.id === card.id).length >= maxCardCount || sideDeck.length >= maxExtraSideDeck) {
+                return;
+            }
+            setSideDeck(prev => [...prev, card]);
+        }
+    };
+    
+
+    const removeFromDeck = (card, deck) => {
+        if (deck === 'main') {
+            setMainDeck(prev => {
+                const updatedDeck = [...prev];
+                const index = updatedDeck.findIndex(item => item.id === card.id);
+                if (index > -1) {
+                    updatedDeck.splice(index, 1);
+                }
+                return updatedDeck;
+            });
+        } else if (deck === 'extra') {
+            setExtraDeck(prev => {
+                const updatedDeck = [...prev];
+                const index = updatedDeck.findIndex(item => item.id === card.id);
+                if (index > -1) {
+                    updatedDeck.splice(index, 1);
+                }
+                return updatedDeck;
+            });
+        } else if (deck === 'side') {
+            setSideDeck(prev => {
+                const updatedDeck = [...prev];
+                const index = updatedDeck.findIndex(item => item.id === card.id);
+                if (index > -1) {
+                    updatedDeck.splice(index, 1);
+                }
+                return updatedDeck;
+            });
+        }
+    };
+    useEffect(() => {
+      if (!loggedInUser) {
+        console.warn('User is not logged in');
+        return;
+      }
+  
+      const fetchOrCreateDeck = async () => {
+        try {
+            const response = await axios.get(/api/decks/${loggedInUser.id});
+            if (response.data) {
+                const { deckName = 'Deck_test', mainDeck = [], extraDeck = [], sideDeck = [] } = response.data;
+                setDeckName(deckName);
+                setMainDeck(mainDeck);
+                setExtraDeck(extraDeck);
+                setSideDeck(sideDeck);
+            } else {
+                await axios.post('/api/decks', {
+                    userId: loggedInUser.id,
+                    deckName: 'New Deck',
+                    mainDeck: [],
+                    extraDeck: [],
+                    sideDeck: [],
+                });
+                setDeckName('New Deck');
+            }
+        } catch (error) {
+            console.error('Error fetching or creating deck:', error);
+        }
+    };
+
+    fetchOrCreateDeck();
+}, [loggedInUser]);
+
+const handleDeckNameChange = (e) => setDeckName(e.target.value);
+
+const handleSaveDeck = async () => {
+    if (!loggedInUser) {
+        console.warn('User is not logged in');
+        return;
+    }
+
+    try {
+        await axios.put(/api/decks/${loggedInUser.id}, {
+            deckName,
+            mainDeck,
+            extraDeck,
+            sideDeck,
+        });
+        console.log('Deck saved successfully');
+    } catch (error) {
+        console.error('Error saving deck:', error);
+    }
+};
+
+if (!loggedInUser) {
+    return <div>Please log in to build a deck.</div>;
+}
+
+  
+    return (
+        <Box sx={{ display: 'flex', position: 'relative' }}>
+            <IconButton
+                onClick={() => setOpen(!open)}
+                sx={{
+                    position: 'absolute',
+                    top: -20,
+                    right: -35,
+                    zIndex: 1200,
+                }}
+            >
+                <SearchIcon />
+            </IconButton>
+            <Drawer
+                anchor="right"
+                variant={isMobile ? "temporary" : "permanent"}
+                open={isMobile ? open : true}
+                onClose={isMobile ? () => setOpen(false) : undefined}
+                sx={{
+                    '& .MuiDrawer-paper': { 
+                        boxSizing: 'border-box', 
+                        width: 350,
+                        padding: 3
+                    },
+                }}
+            >
+                <BuildCard addToDeck={addToDeck} />
+            </Drawer>
+            <Box component="main" className="main-container2">
+              <br />
+              <Box>
+                <TextField label="Deck Name" sx={{ width: '100%', maxWidth: '400px' }} value={deckName||'Deck_test'} onChange={handleDeckNameChange} />
+                   
+                <IconButton aria-label="save deck" size="large" onClick={handleSaveDeck}>
+                <SaveIcon fontSize="inherit" />
+                </IconButton>
+                
+              </Box>
+                <Typography variant="h6">Main Deck</Typography>
+                <Card sx={{ border: '1px solid #ccc', borderRadius: 0, padding: 2, width: '100%', maxWidth: '1000px', height:'100%', maxHeight: '1300px' }}>
+                    <CardContent>
+                        {mainDeck.map(card => (
+                            <img
+                                key={card.id}
+                                src={card.card_images[0].image_url}
+                                alt={card.name}
+                                className="card-image"
+                                onDoubleClick={() => removeFromDeck(card, 'main')}
+                                style={{ width: '100px', height: 'auto', cursor: 'pointer', margin: '5px' }}
+                            />
+                        ))}
+                    </CardContent>
+                </Card>
+                <Typography variant="h6">Extra Deck</Typography>
+                <Card sx={{ border: '1px solid #ccc', borderRadius: 0, padding: 2, width: '100%', maxWidth: '1000px' }}>
+                    <CardContent>
+                        {extraDeck.map(card => (
+                            <img
+                                key={card.id}
+                                src={card.card_images[0].image_url}
+                                alt={card.name}
+                                className="card-image"
+                                onDoubleClick={() => removeFromDeck(card, 'extra')}
+                                style={{ width: '100px', height: 'auto', cursor: 'pointer', margin: '5px' }}
+                            />
+                        ))}
+                    </CardContent>
+                </Card>
+                <Typography variant="h6">Side Deck</Typography>
+                <Card sx={{ border: '1px solid #ccc', borderRadius: 0, padding: 2, width: '100%', maxWidth: '1000px' }}>
+                    <CardContent>
+                        {sideDeck.map(card => (
+                            <img
+                                key={card.id}
+                                src={card.card_images[0].image_url}
+                                alt={card.name}
+                                className="card-image"
+                                onDoubleClick={() => removeFromDeck(card, 'side')}
+                                style={{ width: '100px', height: 'auto', cursor: 'pointer', margin: '5px' }}
+                            />
+                        ))}
+                    </CardContent>
+                </Card>
+                <br /><br />
+                
+                
+            </Box>
+        </Box>
+    );
+}
+
+export default BuildDeck;
+
+
+
+
+
+给后端的：
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+// Middleware
+app.use(cors({
+    origin: 'http://localhost:5173', // Adjust this if your frontend is running on a different port
+}));
+app.use(bodyParser.json());
+app.use(express.json());
+
+// MongoDB connection
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/Card_search_users_info', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+    .then(() => {
+        console.log('Connected to MongoDB');
+    })
+    .catch((err) => {
+        console.error('Failed to connect to MongoDB', err);
+    });
+
+// User Schema
+const userSchema = new mongoose.Schema({
+    name: String,
+    email: { type: String, unique: true },
+    password: String,
+    profilePicture: { type: String, default: './LOL_Gwen_default_pro_pic.png' },
+    description: { type: String, default: 'My name is, Atum!' }
+});
+
+const User = mongoose.model('User', userSchema);
+
+// Deck Schema
+const deckSchema = new mongoose.Schema({
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    deckName: { type: String, required: true },
+    mainDeck: { type: [Object], default: [] },
+    extraDeck: { type: [Object], default: [] },
+    sideDeck: { type: [Object], default: [] },
+});
+
+const Deck = mongoose.model('Deck', deckSchema);
+
+// Register route
+app.post('/register', async (req, res) => {
+    const { name, email, password } = req.body;
+    try {
+        const newUser = new User({ name, email, password });
+        await newUser.save();
+
+        // Create a default deck for the new user
+        const defaultDeck = new Deck({
+            userId: newUser._id,
+            deckName: 'Default Deck',
+            mainDeck: [],
+            extraDeck: [],
+            sideDeck: []
+        });
+        await defaultDeck.save();
+
+        res.status(201).json(newUser);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+});
+
+// Login route
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+    console.log('Login request received:', req.body); // Log request body for debugging
+    try {
+        const user = await User.findOne({ email, password });
+        if (user) {
+            // Check if the user already has a deck
+            let deck = await Deck.findOne({ userId: user._id });
+            if (!deck) {
+                // Create a default deck if none exists
+                deck = new Deck({
+                    userId: user._id,
+                    deckName: 'Default Deck',
+                    mainDeck: [],
+                    extraDeck: [],
+                    sideDeck: []
+                });
+                await deck.save();
+            }
+            res.status(200).json({ user, deck });
+        } else {
+            res.status(400).json({ message: 'Invalid email or password' });
+        }
+    } catch (error) {
+        console.error('Login error:', error); // Log error for debugging
+        res.status(400).json({ message: error.message });
+    }
+});
+
+// Update Profile route
+app.put('/profile', async (req, res) => {
+    const { email, name, profilePicture, description } = req.body;
+    try {
+        const user = await User.findOneAndUpdate({ email }, { name, profilePicture, description }, { new: true });
+        if (user) {
+            res.status(200).json(user);
+        } else {
+            res.status(400).json({ message: 'User not found' });
+        }
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+});
+
+// Get User route
+app.get('/api/user', async (req, res) => {
+    const { email } = req.query; // Ensure you are extracting email from query parameters
+    if (!email) {
+        return res.status(400).json({ message: 'Email query parameter is required' });
+    }
+    try {
+        const user = await User.findOne({ email });
+        if (user) {
+            res.status(200).json(user);
+        } else {
+            res.status(404).json({ message: 'User not found' });
+        }
+    } catch (error) {
+        console.error(`Error fetching user: ${error.message}`);
+        res.status(500).json({ message: error.message });
+    }
+});
+
+// Logout route
+app.post('/api/logout', (req, res) => {
+    res.status(200).send({ message: 'Logged out successfully' });
+});
+
+// Define Card Schema
+const cardSchema = new mongoose.Schema({
+    id: String,
+    name: String,
+    type: String,
+    desc: String,
+    atk: Number,
+    def: Number,
+    level: Number,
+    race: String,
+    attribute: String,
+    card_images: [{
+        image_url: String,
+    }],
+    // You can add more fields as needed
+});
+
+const Card = mongoose.model('Card', cardSchema);
+
+// Route to save deck
+app.post('/api/decks', async (req, res) => {
+    try {
+        const { userId, deckName, mainDeck, extraDeck, sideDeck } = req.body;
+        let deck = await Deck.findOne({ userId });
+
+        if (deck) {
+            // Update existing deck
+            deck.deckName = deckName;
+            deck.mainDeck = mainDeck;
+            deck.extraDeck = extraDeck;
+            deck.sideDeck = sideDeck;
+            deck = await deck.save();
+        } else {
+            // Create a new deck
+            deck = new Deck({ userId, deckName, mainDeck, extraDeck, sideDeck });
+            deck = await deck.save();
+        }
+
+        res.status(201).json(deck);
+    } catch (error) {
+        res.status(500).json({ message: 'Failed to save deck.' });
+    }
+});
+
+// Get a user's deck
+app.get('/api/decks/:userId', async (req, res) => {
+    try {
+        const { userId } = req.params;
+        const deck = await Deck.findOne({ userId });
+        if (deck) {
+            res.json(deck);
+        } else {
+            res.status(404).send('Deck not found');
+        }
+    } catch (error) {
+        res.status(500).send('Server error');
+    }
+});
+
+// Define Theme schema
+const themeSchema = new mongoose.Schema({
+    cardName: String,
+    deckname: String,
+    comment: String,
+    deckImage: String,
+});
+
+const Theme = mongoose.model('Theme', themeSchema);
+
+// Route to get themes
+app.get('/api/themes', async (req, res) => {
+    try {
+        const themes = await Theme.find({});
+        res.status(200).json(themes);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+// Route to get comments for strong cards
+app.get('/api/strongcards', async (req, res) => {
+    try {
+        const strongCards = await Theme.find({});
+        res.status(200).json(strongCards);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+// Define Shop Schema
+const shopSchema = new mongoose.Schema({
+    shopName: String,
+    location: String,
+    mapUrl: String,
+    workingHours: String,
+});
+
+const HKIshop = mongoose.model('HKIshop', shopSchema);
+const KWLshop = mongoose.model('KWLshop', shopSchema);
+const NTshop = mongoose.model('NTshop', shopSchema);
+
+// Endpoint for HKIshops
+app.get('/api/hkishops', async (req, res) => {
+    try {
+        const hkiShops = await HKIshop.find({});
+        res.status(200).json(hkiShops);
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch HKI shops data' });
+    }
+});
+
+// Endpoint for KWLshops
+app.get('/api/kwlshops', async (req, res) => {
+    try {
+        const kwlShops = await KWLshop.find({});
+        res.status(200).json(kwlShops);
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch KWL shops data' });
+    }
+});
+
+// Endpoint for NTshops
+app.get('/api/ntshops', async (req, res) => {
+    try {
+        const ntShops = await NTshop.find({});
+        res.status(200).json(ntShops);
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch NT shops data' });
+    }
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});

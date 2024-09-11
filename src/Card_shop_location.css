@@ -1,0 +1,87 @@
+/* Card_shop_location.css */
+.card-shop-location {
+    padding: 20px;
+  }
+  
+  .region-container {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .region-title {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #1976d2; /* Primary color */
+    padding-top: 20px;
+  }
+  
+  .shop-card {
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+  }
+  
+  .shop-card .MuiCardHeader-root {
+    background-color: #f5f5f5;
+  }
+  
+  .shop-card .MuiCardContent-root {
+    padding: 16px;
+  }
+  
+  .shop-card .MuiTypography-body2 {
+    margin: 8px 0;
+  }
+  
+  .map-container {
+    margin-top: 16px;
+  }
+  
+  /* Main container adjustments */
+  .main-container {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 15%; /* Ensure content is centered */
+    margin-right:0%; /* Ensure content is centered */
+    max-width: 1200px; /* Set a max-width for better layout */
+  }
+
+  /* Responsive styles */
+  @media (max-width: 600px) {
+    .card-shop-location {
+      padding: 10px;
+    }
+  
+    .region-title {
+      font-size: 1.5em;
+    }
+  
+    .shop-card .MuiCardHeader-root {
+      padding: 8px;
+    }
+  
+    .shop-card .MuiCardContent-root {
+      padding: 8px;
+    }
+  
+    .shop-card .MuiTypography-body2 {
+      font-size: 0.875em;
+    }
+  
+    .map-container iframe {
+      height: 200px; /* Reduce height for smaller screens */
+    }
+
+    /* Main container adjustments */
+  .main-container {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 0%; /* Ensure content is centered */
+    margin-right:0%; /* Ensure content is centered */
+    max-width: 1200px; /* Set a max-width for better layout */
+  }
+  }
+  
+
+  
+  

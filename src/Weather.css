@@ -1,0 +1,54 @@
+/* Weather.css */
+.weather-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-left: 7%; /* Ensure content is centered */
+    margin-right: 0; /* Ensure content is centered */
+}
+
+.weather-container2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-left: 0%; /* Ensure content is centered */
+    margin-right: 0; /* Ensure content is centered */
+    margin-bottom: 32px; /* Add some space below today's weather */
+}
+
+.weather-card {
+    width: 200px;
+    text-align: center;
+    background-color: #1B5396 !important; /* if the css failed to apply, add !important or use inline */ 
+    color: #ffffff !important; /* Set text color for better contrast */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visual */
+    border-radius: 8px; /* Add rounded corners */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+
+
+.weather-icon {
+    width: 80px; /* Smaller width for better fit */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.section-title {
+    color: #1B5396; /* Set title color */
+    margin-bottom: 16px; /* Add space below the title */
+}
+
+@media (max-width: 600px) {
+    /* Weather.css */
+.weather-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-left: 0%; /* Ensure content is centered */
+    margin-right: 0; /* Ensure content is centered */
+}
+}
+

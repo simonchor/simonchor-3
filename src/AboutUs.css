@@ -1,0 +1,25 @@
+/* AboutUs.css */
+.about-us {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-us h1,
+.about-us h2 {
+    margin-top: 20px;
+    color: #1976d2; /* Primary color */
+}
+
+.about-us p {
+    margin: 10px 0;
+}
+
+.about-us a {
+    color: #1976d2; /* Primary color */
+    text-decoration: none;
+}
+
+.about-us a:hover {
+    text-decoration: underline;
+}

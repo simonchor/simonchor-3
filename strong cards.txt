@@ -1,0 +1,11 @@
+strong cards:
+"S:P Little Knight";
+"Promethean Princess, Bestower of Flames";
+"Fiendsmith Engraver";
+"Phantom of Yubel";
+"Diabellstar the Black Witch";
+"Imsety, Glory of Horus";
+
+strong card intro:
+S:P Little Knight
+

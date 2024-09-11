@@ -1,0 +1,7 @@
+1. 其他途径登入
+2. password security
+3. 为手机排版
+4. homepage排版
+5. build deck fetch card时also记录下卡的对应id，这样就可以存取了
+6. build a loading screen maybe
+7. 天气日期被推迟了一天

@@ -1,0 +1,199 @@
+improvement about BuildDeck.jsx and Card_server2.mjs :
+
+requirement：
+收集用户点击过添加的卡的id（三个array：mainDeckContent, extraDeckContent, sideDeckContent） -> 用户删除卡则将对应array内容的对应卡id删除 -> 点击保存按钮卡组内容才会将数据放进数据库
+
+problems and solving:
+what is those three array -> 当用户点击添加卡片的时候，对应卡组位置的array就会将该卡的id放入array中（note that 卡片id不能直接放在一起，要用逗号隔开）, note that： if a card goes to the main deck, add its id to the array named mainDeckContent; if a card goes to the extra deck, add its id to the array named extraDeckContent; if a card goes to the side deck, add its id to the array named sideDeckContent. 当用户是登录状态时才自动从数据库提取deckContent
+那现在的show deck怎么更改 -> 靠阅读array的id再从"https://db.ygoprodeck.com/api/v7/cardinfo.php"提取对应卡片的image然后显示，array的内容会随着用户的添加卡片，删除卡片和更换卡组去进行相对应的改变
+怎么认知到删除卡片这一动作（目前是鼠标双击删除卡片） -> 当删除一张卡，移除一次该卡
+卡组存放位置？因为用户会有多个卡组 -> user new schema（userDeck1, userDeck2, userDeck3, etc...）-> example (only for example, not the default value):
+{
+  "_id": {
+    "$oid": "66a8d54fba7417e1c5fe15ea"
+  },
+  "name": "simonjor",
+  "email": "jorjongho@gmail.com",
+  "password": "173520sC!",
+  "profilePicture": "/LOL_Gwen_default_pro_pic.png",
+  "description": "My name is, Simon Chor!",
+  "__v": 0,
+  "userDeck1":{ 
+	"userDeckName":"Deck 1"
+	"deckContent":{
+			"mainDeckContent":"{card id},{card id},{card id},",
+			"extraDeckContent":"{card id},{card id},",
+			"sideDeckContent":"{card id},",
+		}
+	}
+"userDeck2":{ 
+	"userDeckName":"Deck 2"
+	"deckContent":{
+			"mainDeckContent":"",
+			"extraDeckContent":"",
+			"sideDeckContent":"",
+		}
+	}
+"userDeck3":{ 
+	"userDeckName":"Deck 3"
+	"deckContent":{
+			"mainDeckContent":"",
+			"extraDeckContent":"",
+			"sideDeckContent":"",
+		}
+	}
+   etc...
+}
+如何换卡组？->使用switch icon的时候才会弹出一个modal which has a toggle list for user to change between their decks，要放一个CloseIcon button让用户可以选择关闭这个modal when they dont want to switch deck
+default values about user-deck? -> 每个user都会有一个default content的userDeck1,userDeck2和其他的userDeck则是用户按下AddIcon button的时候才会添加并自动转换到新添加的卡组, defalut content may look like:
+"userDeck1":{ 
+	"userDeck1name":"Deck 1"
+	"deckContent":{
+			"mainDeckContent":[],
+			"extraDeckContent":[],
+			"sideDeckContent":[],
+		}
+	}
+
+what is inside the deckContent? ->by default, it is empty. when user save their deck, 暂时存储卡片信息的deckarray的data会被添加进去deckContent
+what is SaveIcon button for? -> 将用户在前端的userDeckName和那三个array：mainDeckContent, extraDeckContent, sideDeckContent 的data传回database进行数据更新，also when user didnt click the SaveIcon button and leave the BuildDeck.jsx page, do not save the changes user made
+what is DeleteIcon button for? ->当用户点击DeleteIcon button, webpage 会弹出一个modal询问用户是否确定要删除当前的卡组，if yes then delete the current deck, if no 关闭 modal and nothing happens
+
+
+conclusion:
+点击添加卡片->增加一个该卡
+双击删除卡片->删除一个该卡
+点击addicon ->增添一个新卡组with empty content with a userDeckName by numerical order 
+点击deleteicon->询问用户是否决定删除卡组，yes？删除当前卡组的信息；no？关闭 modal and nothing happens
+点击switchicon->弹出modal让用户切换卡组
+点击saceicon->存储卡组名称和卡组内容
+一个用户可以有多个卡组，default showing会是用户的userDeck1，若没有userDeck1则按照顺序显示userDeck2，若用户没有任何卡组/把卡组全部删除了则为他添加userDeck1 which same as default value of every user
+very important that the three arrays: mainDeckContent, extraDeckContent, sideDeckContent 担当了非常重要的功能，负责存储用户卡组的对应信息（当array内容变更，数据库也要跟着一起变；当用户登入后，负责提取和暂存用户在数据库的卡组信息，当用户切换卡组，array内容要变成对应卡组的信息）
+also one thing is important, code i provided are all correct e.g. the routes, schema, formating and styling, do improvements base on my provided code , not transforming my code into what you assuming, it is important to follow my rules of my code
+please write down what you have change in the improvement
+
+
+
+现在请根据以下要求依次去修改我的代码：
+最重要的事项：不要更改我的任何样式和布局;
+addicon 用作帮正在登录的用户添加新的空白卡组（卡组名称预设为“Deck”）;
+changecircleicon 用作帮正在登录的用户更换卡组;
+deleteicon 用作帮正在登录的用户删除当前卡组;
+saveicon 用作帮正在登录的用户存储卡组到数据库;
+textfield 用作显示正在登录的用户目前的卡组的名字，可以更改，更改后会立即更新数据库内卡组的名字;
+卡组的定义是由main deck, extra deck 和 side deck 组成，换言之这三个地方的卡加起来的资料便是一个卡组的资料;
+只有登录了的用户才能新添加、存储、更换和删除卡组，为登录的用户显示的卡组总会是用户的第一个卡组;
+如果登录的用户并没有任何卡组则帮其添加一个空白卡组;
+我使用的数据库是来自于MongoDB，数据库名字叫Card_search_users_info;
+非常重要的事项：不用更改fetchcard有关的内容，包括动用search icon;
+检查用户的登录状态可以参考App.jsx和Login.jsx的代码，以传loggedinuser的prop的方式;
+BuildDeck.jsx除了function BuildDeck还有function BuildCard;
+我的数据库并没有collection 'deck',而我的collection 'users'的数据示例是这样的：{
+  "_id": {
+    "$oid": "66a8b9223c9381ad05a2b329"
+  },
+  "name": "The Ultimate Magnet Worrior user, Simon Chor",
+  "email": "chorchungho@gmail.com",
+  "password": "69744796simon",
+  "profilePicture": "/LOL_Gwen_default_pro_pic.png",
+  "description": "My name is, Atum!"
+}
+从https://db.ygoprodeck.com/api/v7/cardinfo.php fetch来的卡片信息是多样的，这个在存储卡组的时候要注意
+
+
+
+既然不能整个object，那我可以只存card.id就好了啊。但是这是可行的吗？我的意思是，将卡的id抽离？不对应该是读取，然后保存不就行了？但是我目前好像做不到啊，难道说deck因为现在存的是card而不是cardid?那fetch card的逻辑要修改一下改为存card id这样后面也就可以只存卡id然后存数据又可以读取了
+
+fetch card确实有fetch，但是图像是来自数据库。api官方网站不让我下载images。what if我有两套卡组，一套整张卡一套card id（这个好像不行）
+
+***核心问题：如何只提取卡片id？
+
+卡组里面的卡图用低清卡图
+
+请记住修改代码时切记要保留且不能改动一切已存在的样式和布局，按需求改动代码时不能改动要求外的功能和逻辑，BuildCard组件和BuildDeck组件同属一个文件：BuildDeck.jsx 。下面是我对代码的改动要求：
+
+fetch卡片的时候依然是整张卡fetch，但是卡组只存放卡片的card.id，可视化卡组那边也要对card方面做相应调整
+
+帮BuildDeck.jsx添加以下的卡组编辑功能：当用户点击IconButton SaveIcon的时候也要连带着TextField内可编辑的卡组名称和正在登录的用户的loggedInUser.id一起保存，若保存成功则弹出modal显示“卡组已保存”（有一个IconButton CloseIcon供用户退出modal）；BuildDeck.jsx会默认显示着用户的第一个卡组，如果用户并没有卡组那就保留BuildDeck.jsx的初始状态——即用户还没有编辑卡组的状态；当用户点击IconButton ChangeCircleIcon的时候会弹出一个modal（有一个IconButton CloseIcon供用户退出modal和一个卡组list），供用户选择和切换数据库有该用户id的卡组，如果用户并没有卡组则在modal显示"您好像并没有卡组"；当用户点击IconButton DeleteIcon则会弹出一个modal询问用户是否要删除卡组（有一个IconButton CloseIcon供用户退出modal，一个普通Button写着“Yes”和一个普通Button写着“No”），若点击“Yes”则删除当前卡组并回到BuildDeck.jsx的初始状态，若点击“No”则退出modal；当用户点击IconButton AddCircleIcon的时候则弹出一个modal询问用户“是否要建立一个新的卡组？”（有一个IconButton CloseIcon供用户退出modal，一个普通Button写着“Yes”和一个普通Button写着“No”），若点击“Yes”则自动保存当前卡组并让BuildDeck.jsx回到初始状态，若点击“No”则退出modal。
+记得要在Card_server2.mjs那里做出对应上面更改的改变，如添加叫decks的schema
+
+试着先从存储卡组那里重新开始做起吧
+
+回归原初：将卡组塞进用户信息里面
+仿照profile去更新卡组，一个用户只能拥有一副卡组（暂时是这个想法，可能也不会变），换言之卡组名称可以和卡组分开毕竟这是绑定固定用户的
+expected database content:
+    name: String,
+    email: { type: String, unique: true },
+    password: String,
+    profilePicture: { type: String, default: './LOL_Gwen_default_pro_pic.png' },
+    description: { type: String, default: 'My name is, Atum!' },
+    deckname:String,
+    mainDeck:{},
+    extraDeck:{},
+    sideDeck:{}
+
+请记住修改代码时切记要保留且不能改动一切已存在的样式和布局，按需求改动代码时不能改动要求外的功能和逻辑，BuildCard组件和BuildDeck组件同属一个文件：BuildDeck.jsx 。下面是我对代码的改动要求:
+将每个用户的deckName（在一个textfield里面进行更改，label就写“Deck Name”）,mainDeck,extraDeck和sideDeck透过IconButton SaveIcon去储存到正在登录的用户的资料里面，用户资料都储存在了MongoDB一个叫做Card_search_users_info的数据库里面一个叫user的collection里面，储存卡组的逻辑请参考Profile.jsx的方式
+
+
+
+目前问题：
+对于名词的不了解
+用户仍然可以添加总数超过三张同样的卡（从数据库读取的数据不计算在计算卡片总数的计算里）
+要让用户知道自己现在在哪一页
+home以及往下的页面要再往下移动一点
+主页map也做成carousel
+针对手机版设计另一套styling
+styling:
+
+BuildDeck:储存后用户要重新登录才能更新卡组
+TodayWeather&Weather:时间设置好像很有问题
+HomeMap&Carousel:做到跟Carousel2一样的效果
+HomeMap好像做不到？
+
+{
+    "temperature": {
+        "recordTime": "2024-08-30T08:00:00+08:00",
+        "data": [
+            { "place": "香港天文台", "value": 28 },
+            { "place": "京士柏", "value": 29 },
+            { "place": "跑马地", "value": 28 },
+            { "place": "黄竹坑", "value": 29 },
+            { "place": "香港国际机场", "value": 28 },
+            { "place": "石岗", "value": 30 },
+            { "place": "荃湾城门谷", "value": 29 },
+            { "place": "沙田", "value": 29 },
+            { "place": "屯门", "value": 29 },
+            { "place": "将军澳", "value": 28 },
+            { "place": "赤鱲角", "value": 28 },
+            { "place": "大埔", "value": 29 },
+            { "place": "沙罗洞", "value": 27 }
+        ]
+    },
+    "humidity": {
+        "recordTime": "2024-08-30T08:00:00+08:00",
+        "data": [
+            { "place": "香港天文台", "value": 83 }
+        ],
+        "min": 70,
+        "max": 90
+    },
+    "rainfall": {
+        "recordTime": "2024-08-30T08:00:00+08:00",
+        "data": []
+    },
+    "icon": [60],
+    "wind": {
+        "speed": {
+            "kmh": 20,
+            "mph": 12,
+            "text": "和缓",
+            "category": "和缓"
+        },
+        "direction": "东南"
+    },
+    "updateTime": "2024-08-30T08:05:00+08:00"
+}
+
+
+

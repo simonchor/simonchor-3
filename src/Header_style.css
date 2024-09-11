@@ -1,0 +1,22 @@
+/* Header_style.css */
+.header {
+    position:absolute;
+    top: 0;
+    width: 100%; /* Ensure it spans the entire viewport width */
+    background-color: lightblue;
+    text-align: center;
+    padding: 0px 0;
+    margin: 0px; /* Ensure no margins */
+    z-index: 1000;
+    height: 50px;
+  }
+  
+  .header h1 {
+    margin: 0;
+  }
+  
+  .header-link {
+    color: inherit; /* 保持与父元素的颜色一致 */
+    text-decoration: none; /* 移除下划线 */
+}
+  
