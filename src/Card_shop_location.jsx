@@ -16,15 +16,15 @@ const CardShopLocation = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const hkiResponse = await fetch('http://localhost:5000/api/HKIshops');
+                const hkiResponse = await fetch('https://us-central1-simonchor-website.cloudfunctions.net/app/api/HKIshops');
                 const hkiData = await hkiResponse.json();
                 setHKIShops(hkiData);
 
-                const kwlResponse = await fetch('http://localhost:5000/api/KWLshops');
+                const kwlResponse = await fetch('https://us-central1-simonchor-website.cloudfunctions.net/app/api/KWLshops');
                 const kwlData = await kwlResponse.json();
                 setKWLShops(kwlData);
 
-                const ntResponse = await fetch('http://localhost:5000/api/NTshops');
+                const ntResponse = await fetch('https://us-central1-simonchor-website.cloudfunctions.net/app/api/NTshops');
                 const ntData = await ntResponse.json();
                 setNTShops(ntData);
             } catch (error) {

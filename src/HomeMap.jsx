@@ -24,9 +24,9 @@ const CardShopLocation2 = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const hkiShops = await fetchShopData('http://localhost:5000/api/HKIshops');
-            const kwlShops = await fetchShopData('http://localhost:5000/api/KWLshops');
-            const ntShops = await fetchShopData('http://localhost:5000/api/NTshops');
+            const hkiShops = await fetchShopData('https://us-central1-simonchor-website.cloudfunctions.net/app/HKIshops');
+            const kwlShops = await fetchShopData('https://us-central1-simonchor-website.cloudfunctions.net/app/KWLshops');
+            const ntShops = await fetchShopData('https://us-central1-simonchor-website.cloudfunctions.net/app/NTshops');
             setShops([...hkiShops, ...kwlShops, ...ntShops]);
         };
 

@@ -46,7 +46,7 @@ function SideBar() {
 
     const handleLogout = async () => {
         try {
-            await axios.post('http://localhost:5000/api/logout');
+            await axios.post('https://us-central1-simonchor-website.cloudfunctions.net/app/api/logout');
             localStorage.removeItem('loggedInUser'); // Remove user data from localStorage
             setLoggedInUser(null);
         } catch (error) {

@@ -363,7 +363,7 @@ useEffect(() => {
     try {
         const user = JSON.parse(localStorage.getItem('loggedInUser'));
         if (user) {
-          const response = await axios.put('http://localhost:5000/build_deck', {
+          const response = await axios.put('https://us-central1-simonchor-website.cloudfunctions.net/app/build_deck', {
                 email: user.email,
                 deckName,
                 mainDeck,

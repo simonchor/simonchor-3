@@ -15,7 +15,7 @@ function Home() {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/sampleName');
+                const response = await axios.get('https://us-central1-simonchor-website.cloudfunctions.net/app/sampleName');
                 console.log(response.data);
                 setImages(response.data.map(item => item.sampleName));
             } catch (error) {

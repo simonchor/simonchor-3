@@ -18,7 +18,7 @@ const Register = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:5000/register', {
+            const response = await axios.post('https://us-central1-simonchor-website.cloudfunctions.net/app/register', {
                 name,
                 email,
                 password

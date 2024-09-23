@@ -1,0 +1,28 @@
+runtime: nodejs20
+
+instance_class: F4
+
+env_variables:
+  NODE_ENV: 'production'
+  PORT: 8081
+
+
+
+readiness_check:
+  path: "/"
+  check_interval_sec: 5
+  timeout_sec: 300
+  failure_threshold: 10
+  success_threshold: 1
+  app_start_timeout_sec: 600
+
+liveness_check:
+  path: "/"
+  check_interval_sec: 5
+  timeout_sec: 4
+  failure_threshold: 5
+  success_threshold: 2
+
+handlers:
+- url: /.*
+  script: auto

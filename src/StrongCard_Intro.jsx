@@ -13,7 +13,7 @@ function StrongCard_Intro() {
     // 从数据库获取卡片数据
     const fetchCardData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/strongcards'); // Fetch data from your backend
+        const response = await axios.get('https://us-central1-simonchor-website.cloudfunctions.net/app/api/strongcards'); // Fetch data from your backend
         setCards(response.data); // Set the fetched data to state
       } catch (error) {
         console.error("Error fetching card data:", error);

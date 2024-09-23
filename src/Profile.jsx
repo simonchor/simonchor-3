@@ -33,7 +33,7 @@ const Profile = () => {
 
     const handleSave = async () => {
         try {
-            const response = await axios.put('http://localhost:5000/profile', {
+            const response = await axios.put('https://us-central1-simonchor-website.cloudfunctions.net/app/profile', {
                 email,
                 name,
                 profilePicture,
